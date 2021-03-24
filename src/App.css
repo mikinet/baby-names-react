@@ -1,8 +1,8 @@
 .App {
-  width:80%;
-  margin:auto;
-  margin-top:4rem;
-  padding:0.8rem;
+  width: 80%;
+  margin: auto;
+  margin-top: 4rem;
+  padding: 0.8rem;
   border: 3px solid;
   border-radius: 0.4em;
   border-top-color: lightseagreen;
@@ -12,32 +12,44 @@
   text-align: center;
 }
 
-#search{
-  margin-top:2.5em;
-  padding:0.5em;
+#search {
+  margin: 2.5em;
+  padding: 0.5em;
   font-size: 14px;
   outline-color: lightseagreen;
 }
 
-.name-picker{
-  display:flex;
+.favourites {
+  width: 90%;
+  margin: auto;
+  padding-bottom: 1rem;
+  color: #bbb;
+  text-align: left;
+  border-bottom: 2px solid #ccc;
+}
+
+.favourites span {
+  font-size: 2rem;
+}
+
+.name-picker {
+  display: flex;
   flex-wrap: wrap;
-  margin:auto;
-  margin-top:6em;
+  margin:2.5em auto 1.5em;
 }
 
-.name{
-  font-size:1.2em;
-  margin:0.15em;
-  padding:0.2em;
-  border-radius:0.2em;
+.name {
+  font-size: 1.2em;
+  margin: 0.15em;
+  padding: 0.2em;
+  border-radius: 0.2em;
 }
 
-.f-name{
+.f-name {
   background-color: rgb(238, 79, 79);
-  color:azure;
+  color: azure;
 }
 
-.m-name{
+.m-name {
   background-color: lightseagreen;
 }
