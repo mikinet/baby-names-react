@@ -7,9 +7,16 @@ const NamePicker = (props) => {
       {props.namesData
         // filter names based on user search input
         .filter((nameData) =>
-          nameData.name.toUpperCase().includes(props.filter.toUpperCase())
+          nameData.name.toUpperCase().includes(props.textInput.toUpperCase())
         )
-        // populate names
+        // filter names based on selected gender filter
+        .filter((nameData) => {
+          if (props.filter === "b") {
+            return true;
+          }
+          return nameData.sex === props.filter;
+        })
+        // populate name components
         .map((nameData, index) => {
           return (
             <BabyName

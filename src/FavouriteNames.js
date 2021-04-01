@@ -1,5 +1,7 @@
 import BabyName from "./BabyName";
 
+// const initialText =
+//   "Favourites: Click some names below to make your shortlist...";
 const FavouriteNames = (props) => {
   return (
     <div className="favourites">

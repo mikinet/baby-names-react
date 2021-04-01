@@ -6,6 +6,7 @@ import SearchBar from "./SearchBar";
 import Favourites from "./FavouriteNames";
 
 function App() {
+  const [selectedGender, setSelectedGender] = useState("b");
   // the name search function
   const [searchInput, setSearchInput] = useState("");
   const handleNameSearch = (event) => {
@@ -14,7 +15,9 @@ function App() {
   };
   // add names to or remove names from a favourites list
   const [favouriteNames, setFavouriteNames] = useState([]);
-  const [availableNames, setAvailableNames] = useState(sort([...babyNamesData]));
+  const [availableNames, setAvailableNames] = useState(
+    sort([...babyNamesData])
+  );
   const handleAddRemoveFavourites = (event) => {
     const babyName = getNameData(event.target);
     const parentElement = event.target.parentNode.className;
@@ -26,13 +29,21 @@ function App() {
       setAvailableNames(removeName(babyName, availableNames));
     }
   };
+  
+  const updateGenderFilter = (filterId) => {
+    setSelectedGender(filterId);
+    if (!document.querySelector(".name-picker")) {
+      return;
+    }
+  };
 
   return (
     <div class="App">
       <SearchBar
         type="text"
         onChange={handleNameSearch}
-        placeholder="Search for a nmae..."
+        onClick={updateGenderFilter}
+        placeholder="Search for a name..."
       />
       <Favourites
         namesData={favouriteNames}
@@ -40,7 +51,8 @@ function App() {
       />
       <NamePicker
         namesData={availableNames}
-        filter={searchInput}
+        textInput={searchInput}
+        filter={selectedGender}
         onDoubleClick={handleAddRemoveFavourites}
       />
     </div>
@@ -75,7 +87,7 @@ function getNameData(node) {
   return {
     id: parseInt(node.id),
     name: node.textContent,
-    sex: node.className.substring(i, i + 1),  // returns "f" or "m"
+    sex: node.className.substring(i, i + 1), // returns "f" or "m"
   };
 }
 

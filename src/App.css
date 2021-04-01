@@ -12,11 +12,36 @@
   text-align: center;
 }
 
-#search {
+div.search-bar{
+  display:flex;
+  justify-content: center;
+  align-items: center;
   margin: 2.5em;
   padding: 0.5em;
+}
+
+#search {
   font-size: 14px;
   outline-color: lightseagreen;
+}
+
+img.name-filter{
+  width:24px;
+  height: 24px;
+  margin:0.15em;
+  cursor: pointer;
+}
+
+.filter-female{
+  background-color:rgb(238, 79, 79);
+}
+
+.filter-male{
+  background-color: lightseagreen;
+}
+
+.active-filter{
+  border-bottom: 2px solid;
 }
 
 .favourites {
@@ -52,4 +77,8 @@
 
 .m-name {
   background-color: lightseagreen;
+}
+
+.hidden{
+  display: none;
 }
