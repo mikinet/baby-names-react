@@ -40,7 +40,6 @@ function App() {
   return (
     <div class="App">
       <SearchBar
-        type="text"
         onChange={handleNameSearch}
         onClick={updateGenderFilter}
         placeholder="Search for a name..."
